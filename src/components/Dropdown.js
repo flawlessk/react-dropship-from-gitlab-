@@ -33,11 +33,13 @@ const Dropdown = ({ category }) => {
               </button>
             </li>
             {category.map((item) => (
-              <li className="dd-list-item" key={item}>
-                <button type="button">
-                  <Link to={item.replace(/ /g, "-")}>{item}</Link>
-                </button>
-              </li>
+              <Link to={item.replace(/ /g, "-")}>
+                <li className="dd-list-item" key={item}>
+                  <button type="button">
+                    {item}
+                  </button>
+                </li>
+              </Link>
             ))}
           </ul>
         )}

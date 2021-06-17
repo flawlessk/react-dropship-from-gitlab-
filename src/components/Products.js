@@ -4,7 +4,6 @@ import Modal from "./Modal";
 
 const Products = ({
   products,
-  filterProducts,
   checkedProducts,
   checkboxChanged,
 }) => {
@@ -15,7 +14,6 @@ const Products = ({
       <div id="products-wrapper">
         <SingleProduct
           products={products}
-          filterProducts={filterProducts}
           checkedProducts={checkedProducts}
           checkboxChanged={checkboxChanged}
           setActiveProduct={setActiveProduct}

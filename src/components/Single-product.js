@@ -1,22 +1,26 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 const SingleProduct = ({
   products,
-  filterProducts,
   checkboxChanged,
   checkedProducts,
   setActiveProduct,
   setIsOpen,
 }) => {
-  const newProducts = filterProducts.length > 0 ? filterProducts : products;
   const openModal = (item) => {
     setActiveProduct(item);
     setIsOpen(true);
   };
+  const history = useHistory();
 
-  return newProducts.map((item) => (
+  const popProduct = (id) => {
+    history.push(`/catalog/${id}`)
+  }
+  return products.map((item) => (
     <div
       key={item.id}
+      onClick={() => popProduct(item.id)}
       className={`${
         checkedProducts.includes(item)
           ? " products__item--input--highlited"

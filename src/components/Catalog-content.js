@@ -9,7 +9,6 @@ const CatalogContent = ({
   checkedProducts,
   setProducts,
   products,
-  filterProducts,
   search,
   changeSearch,
   getSortedProducts,
@@ -42,7 +41,6 @@ const CatalogContent = ({
       </div>
       <Products
         products={products}
-        filterProducts={filterProducts}
         checkedProducts={checkedProducts}
         checkboxChanged={checkboxChanged}
       />

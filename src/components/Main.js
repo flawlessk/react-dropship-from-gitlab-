@@ -11,7 +11,6 @@ import {
 const Main = () => {
   const [category, setCategory] = useState([]);
   const [products, setProducts] = useState([]);
-  const [filterProducts, setFilteredProducts] = useState([]);
   const [search, setSearch] = useState("");
   const [params, setParams] = useState();
   const [checkedProducts, setCheckProducts] = useState([]);
@@ -33,7 +32,7 @@ const Main = () => {
   useEffect(() => {
     if (params) {
       getProductsFiltered(params).then((products) => {
-        const dataArray = products.data;
+        const dataArray = filterProducts(products.data, search);
         setProducts(dataArray);
       });
     } else {
@@ -42,7 +41,7 @@ const Main = () => {
         setProducts(dataArray);
       });
     }
-  }, [params]);
+  }, [params,search]);
 
   useEffect(() => {
     getProductsCategories().then((products) => {
@@ -55,7 +54,8 @@ const Main = () => {
     const searchTimeout = setTimeout(() => {
       getProductsSorted().then((products) => {
         const dataArray = products.data;
-        setProducts(dataArray);
+        let searchProducts = filterProducts(dataArray, search);
+        setProducts([...searchProducts]);
       });
     }, 800);
     return () => {
@@ -65,17 +65,16 @@ const Main = () => {
 
   const changeSearch = (event) => {
     setSearch(event.target.value);
-    let searchProducts = filterProducts.length ? filterProducts : products;
-    searchProducts = searchProducts.filter((value) =>
-      value.title.toUpperCase().includes(event.target.value.toUpperCase())
-    );
-
-    setFilteredProducts([...searchProducts]);
   };
 
-  const getSortedProducts = async (value) => {
-    let sortedProducts = filterProducts.length ? filterProducts : products;
+  const filterProducts = (products, text) => {
+    return products.filter((value) =>
+      value.title.toUpperCase().includes(text.toUpperCase())
+    );
+  }
 
+  const getSortedProducts = async (value) => {
+    const sortedProducts = [...products];
     if (value === "HTL") {
       sortedProducts.sort((a, b) => (a.price < b.price ? 1 : -1));
     } else if (value === "LTH") {
@@ -87,7 +86,7 @@ const Main = () => {
     } else {
       sortedProducts.sort((a, b) => (a.id > b.id ? 1 : -1));
     }
-    setFilteredProducts([...sortedProducts]);
+    setProducts([...sortedProducts]);
   };
   return (
     <div className="main">
@@ -102,7 +101,6 @@ const Main = () => {
               setProducts={setProducts}
               changeSearch={changeSearch}
               search={search}
-              filterProducts={filterProducts}
               getSortedProducts={getSortedProducts}
               setParams={setParams}
               params={params}
