@@ -7,10 +7,12 @@ const Dropdown = ({ category }) => {
   const [ddOpen, setDdOpen] = useState(false);
   const toggle = () => setDdOpen(!ddOpen);
   let history = useHistory();
+
   const redirectMain = () => {
     toggle(false);
     history.push("/");
   };
+
   return (
     <nav className="catalog__nav dd-wrapper">
       <div className="catalog__nav-form">

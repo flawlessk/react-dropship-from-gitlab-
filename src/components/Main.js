@@ -8,6 +8,7 @@ import {
   getProductsSorted,
 } from "../API";
 
+
 const Main = () => {
   const [category, setCategory] = useState([]);
   const [products, setProducts] = useState([]);

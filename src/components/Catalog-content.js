@@ -3,6 +3,7 @@ import Header from "./Header";
 import Sort from "./Sort";
 import Products from "./Products";
 import { useParams } from "react-router-dom";
+import Testing from "./Testing";
 
 const CatalogContent = ({
   checkboxChanged,

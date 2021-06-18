@@ -399,6 +399,14 @@
   position: relative;
   margin: 0 10px 10px;
 }
+.MuiIconButton-root {
+  background-color: none;
+
+}
+.MuiIconButton-root:hover {
+  background-color: none;
+  
+}
 .check {
   position: absolute;
   width: 22px;

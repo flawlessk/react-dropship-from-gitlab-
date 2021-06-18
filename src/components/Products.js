@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SingleProduct from "./Single-product";
 import Modal from "./Modal";
+import Testing from "./Testing";
 
 const Products = ({
   products,
@@ -12,12 +13,19 @@ const Products = ({
   return (
     <div className="content__products">
       <div id="products-wrapper">
-        <SingleProduct
+        {/* <SingleProduct
           products={products}
           checkedProducts={checkedProducts}
           checkboxChanged={checkboxChanged}
           setActiveProduct={setActiveProduct}
           setIsOpen={setIsOpen}
+        /> */}
+        <Testing 
+        products={products}
+        checkedProducts={checkedProducts}
+        checkboxChanged={checkboxChanged}
+        setActiveProduct={setActiveProduct}
+        setIsOpen={setIsOpen}
         />
         <Modal
           open={isOpen}
