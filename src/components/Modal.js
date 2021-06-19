@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const MODAL_STYLES = {
   position: "fixed",
   top: "50%",

@@ -1,28 +1,30 @@
 import React from 'react'
-import { Checkbox, Grid, Paper } from '@material-ui/core'
+import { Checkbox, Grid, Paper , Box } from '@material-ui/core'
 import { sizing } from '@material-ui/system';
 import { useHistory } from "react-router-dom";
 
 
 export default function Testing({products, checkedProducts, checkboxChanged, setActiveProduct, setIsOpen}) {
+    const history = useHistory();
+
     const openModal = (item) => {
         setActiveProduct(item);
         setIsOpen(true);
+        history.push(`/catalog/${item.id}`)
       };
-      const history = useHistory();
-    
-      const popProduct = (id) => {
-        history.push(`/catalog/${id}`)
-      }
-    return products.map((item) => (
-            <Grid container wrap="wrap" spacing={2} >
-                <Grid item xs={3}
+
+    return (
+        <Grid container justify="space-between">
+             {products.map((item) => (
+            <Box className="product-test"
+                key={item.id}
+                onClick={(e) => openModal(item)}
+            >
+                <Box item xs={3} 
                  className={`${ checkedProducts.includes(item)
                 ? " products__item--input--highlited"
                 : "products-item"
-            }`} 
-                key={item.id}
-                onClick={() => popProduct(item.id)}>
+            }`} >
                     <Checkbox 
                         id="products__item--input"
                         color="primary" 
@@ -30,7 +32,7 @@ export default function Testing({products, checkedProducts, checkboxChanged, set
                         onChange={() => checkboxChanged(item)}
                     />
                     <Paper>
-                        <div className="products-image" onClick={() => openModal(item)}>
+                        <div className="products-image">
                             <img src={item.image} alt="img" />
                         </div>
                         <div className="products-title">
@@ -44,7 +46,10 @@ export default function Testing({products, checkedProducts, checkboxChanged, set
                             <span>COST {item.price}$ </span>
                         </div>
                     </Paper>
-                </Grid>
-            </Grid>
-    ))
+                </Box>
+            </Box>
+    ))}
+    </Grid>
+    )
+            
 }

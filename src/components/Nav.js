@@ -9,68 +9,87 @@ import {
   faArrowsAltH,
   faClipboardList,
 } from "@fortawesome/free-solid-svg-icons";
+import { Route, Switch, Link } from "react-router-dom";
+import CatalogContent from "./Catalog-content";
+
 
 const Nav = () => {
   return (
-    <nav className="nav">
-      <div className="logo">
-        <a href="../../public/index.html" id="dropship_logo">
-          <img
-            className="logo_img"
-            src="/assets/dropship_logo.png"
-            alt="logo"
-          ></img>
-        </a>
-      </div>
-      <div className="drop-down">
-        <ul className="nav_list">
-          <div className="list_box-profile">
-            <li className="list-item" id="list-item--profile">
+        <nav className="nav">
+          <div className="logo">
+            <a href="../../public/index.html" id="dropship_logo">
               <img
-                className="item-img"
-                src="/assets/profile.jpg"
-                alt="profile"
+                className="logo_img"
+                src="/assets/dropship_logo.png"
+                alt="logo"
               ></img>
-            </li>
+            </a>
           </div>
-          <div className="list_box">
-            <li className="list-item" id="list-item--dashboard">
-              <FontAwesomeIcon className="icons" icon={faTachometerAlt} />
-            </li>
+          <div className="drop-down">
+            <ul className="nav_list">
+              <div className="list_box-profile">
+                  <li className="list-item" id="list-item--profile">
+                    <Link to="/user/profile">
+                      <img
+                        className="item-img"
+                        src="/assets/profile.jpg"
+                        alt="profile"
+                      />
+                    </Link>
+                  </li>
+              </div>
+              <div className="list_box">
+                <li className="list-item" id="list-item--dashboard">
+                  <Link to="/dashboard">
+                    <FontAwesomeIcon className="icons" icon={faTachometerAlt} />
+                  </Link>
+                </li>
+              </div>
+              <div className="list_box">
+                <li className="list-item" id="list-item--catalog">
+                  <Link to="/catalog">
+                    <FontAwesomeIcon className="icons" icon={faListUl} />
+                  </Link>
+                </li>
+              </div>
+              <div className="list_box">
+                <li className="list-item" id="list-item--cube">
+                  <Link to="/inventory">
+                    <FontAwesomeIcon className="icons" icon={faCube} />
+                  </Link>
+                </li>
+              </div>
+              <div className="list_box">
+                <li className="list-item" id="list-item--inventory">
+                  <Link to="/cart">
+                    <FontAwesomeIcon className="icons" icon={faShoppingCart} />
+                  </Link>
+                </li>
+              </div>
+              <div className="list_box">
+                <li className="list-item" id="list-item--orders">
+                  <Link to="/orders">
+                    <FontAwesomeIcon className="icons" icon={faCheckSquare} />
+                  </Link>
+                </li>
+              </div>
+              <div className="list_box">
+                <li className="list-item" id="list-item--transactions">
+                  <Link to="/transactions">
+                    <FontAwesomeIcon className="icons" icon={faArrowsAltH} />
+                  </Link>
+                </li>
+              </div>
+              <div className="list_box">
+                <li className="list-item" id="list-item--store">
+                  <Link to="/store">
+                    <FontAwesomeIcon className="icons" icon={faClipboardList} />
+                  </Link>
+                </li>
+              </div>
+            </ul>
           </div>
-          <div className="list_box">
-            <li className="list-item" id="list-item--catalog">
-              <FontAwesomeIcon className="icons" icon={faListUl} />
-            </li>
-          </div>
-          <div className="list_box">
-            <li className="list-item" id="list-item--cube">
-              <FontAwesomeIcon className="icons" icon={faCube} />
-            </li>
-          </div>
-          <div className="list_box">
-            <li className="list-item" id="list-item--inventory">
-              <FontAwesomeIcon className="icons" icon={faShoppingCart} />
-            </li>
-          </div>
-          <div className="list_box">
-            <li className="list-item" id="list-item--orders">
-              <FontAwesomeIcon className="icons" icon={faCheckSquare} />
-            </li>
-          </div>
-          <div className="list_box">
-            <li className="list-item" id="list-item--transactions">
-              <FontAwesomeIcon className="icons" icon={faArrowsAltH} />
-            </li>
-          </div>
-          <div className="list_box">
-            <li className="list-item" id="list-item--store">
-              <FontAwesomeIcon className="icons" icon={faClipboardList} />
-            </li>
-          </div>
-        </ul>
-      </div>
-    </nav>
+        </nav>
   );
 };
 

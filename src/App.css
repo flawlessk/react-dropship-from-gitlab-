@@ -311,7 +311,7 @@
 }
 .products-item {
   flex: 1 300px;
-  max-width: calc(100% / 4 - 20px);
+  /* max-width: calc(100% / 4 - 20px); */
   height: 475px;
   background-color: #fff;
   border: 1px solid #e4e5ec;
@@ -620,4 +620,9 @@
   right: 1%;
   width: 25px;
   cursor: pointer;
+}
+
+
+.product-test{
+  width :  calc(100% / 4 - 20px);
 }

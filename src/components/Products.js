@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import SingleProduct from "./Single-product";
 import Modal from "./Modal";
 import Testing from "./Testing";
+import { useHistory } from "react-router-dom";
+
 
 const Products = ({
   products,
@@ -10,6 +12,12 @@ const Products = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeProduct, setActiveProduct] = useState({});
+  const history = useHistory();
+
+  const onClose = () => {
+    setIsOpen(false);
+    history.push(`/catalog/`)
+  }
   return (
     <div className="content__products">
       <div id="products-wrapper">
@@ -29,7 +37,7 @@ const Products = ({
         />
         <Modal
           open={isOpen}
-          onClose={() => setIsOpen(false)}
+          onClose={onClose}
           products={activeProduct}
         />
       </div>

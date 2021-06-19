@@ -89,12 +89,11 @@ const Main = () => {
     }
     setProducts([...sortedProducts]);
   };
+  
   return (
     <div className="main">
       <div className="main__catalog">
         <CatalogNav category={category} />
-        <Switch>
-          <Route path="/:categoryParams?">
             <CatalogContent
               checkedProducts={checkedProducts}
               checkboxChanged={checkboxChanged}
@@ -108,8 +107,6 @@ const Main = () => {
               selectAll={selectAll}
               clearAll={clearAll}
             />
-          </Route>
-        </Switch>
       </div>
     </div>
   );
