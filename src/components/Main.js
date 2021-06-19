@@ -1,6 +1,5 @@
 import CatalogNav from "./Catalog-nav";
 import CatalogContent from "./Catalog-content";
-import { Route, Switch } from "react-router";
 import { useState, useEffect } from "react";
 import {
   getProductsCategories,

@@ -7,14 +7,32 @@ function App() {
     <>
         <Nav />
       <Switch>
-        <Route exact path="/catalog/:categoryParams">
+        <Route exact path="/catalog/:categoryParams?">
           <Main />
         </Route>
+        <Route path="/user/profile">
+          <h2>This is User Profile Section</h2>
+        </Route>
+        <Route path="/">
+          <h2>catalogz catalogze gadadi</h2>
+        </Route>
         <Route path="/cart">
-          hello world
+          <h2>This is Cart Section</h2>
         </Route>
         <Route path="/dashboard">
-          awdwadawd
+          <h2>This is Dashboard Section</h2>
+        </Route>
+        <Route path="/inventory">
+          <h2>This is Inventory Section</h2>
+        </Route>
+        <Route path="/transactions">
+         <h2>This is Transactions Section</h2>
+        </Route>
+        <Route path="/orders">
+          <h2>This is Orders Section</h2>
+        </Route>
+        <Route path="/store">
+          <h2>This is Store Section</h2>
         </Route>
       </ Switch>
     </>

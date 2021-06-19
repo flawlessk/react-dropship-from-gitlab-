@@ -9,15 +9,14 @@ import {
   faArrowsAltH,
   faClipboardList,
 } from "@fortawesome/free-solid-svg-icons";
-import { Route, Switch, Link } from "react-router-dom";
-import CatalogContent from "./Catalog-content";
+import { Link } from "react-router-dom";
 
 
 const Nav = () => {
   return (
         <nav className="nav">
           <div className="logo">
-            <a href="../../public/index.html" id="dropship_logo">
+            <a href="/catalog" id="dropship_logo">
               <img
                 className="logo_img"
                 src="/assets/dropship_logo.png"

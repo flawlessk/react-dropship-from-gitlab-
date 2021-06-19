@@ -1,56 +1,54 @@
-import React from "react";
+import React from 'react'
+import { Checkbox, Grid, Paper , Box } from '@material-ui/core'
 import { useHistory } from "react-router-dom";
 
-const SingleProduct = ({
-  products,
-  checkboxChanged,
-  checkedProducts,
-  setActiveProduct,
-  setIsOpen,
-}) => {
-  const openModal = (item) => {
-    setActiveProduct(item);
-    setIsOpen(true);
-  };
-  const history = useHistory();
 
-  const popProduct = (id) => {
-    history.push(`/catalog/${id}`)
-  }
-  return products.map((item) => (
-    <div
-      key={item.id}
-      onClick={() => popProduct(item.id)}
-      className={`${
-        checkedProducts.includes(item)
-          ? " products__item--input--highlited"
-          : "products-item"
-      }`}
-    >
-      <div className="checkbox-container">
-        <input
-          type="checkbox"
-          id="products__item--input"
-          className="products__item--input"
-          checked={checkedProducts.includes(item)}
-          onChange={() => checkboxChanged(item)}
-        />
-      </div>
-      <div className="products-image" onClick={() => openModal(item)}>
-        <img src={item.image} alt="img" />
-      </div>
-      <div className="products-title">
-        <h3>{item.title}</h3>
-      </div>
-      <h3 className="products-supplier">
-        <span>By:</span>
-        <button>US-Supplier103</button>
-      </h3>
-      <div className="products-price">
-        <span>COST {item.price}$ </span>
-      </div>
-    </div>
-  ));
-};
+export default function SingleProduct({products, checkedProducts, checkboxChanged, setActiveProduct, setIsOpen}) {
+    const history = useHistory();
 
-export default SingleProduct;
+    const openModal = (item) => {
+        setActiveProduct(item);
+        setIsOpen(true);
+        history.push(`/catalog/${item.id}`)
+      };
+
+    return (
+        <Grid container justify="space-between">
+             {products.map((item) => (
+            <Box className="product-test"
+                onClick={(e) => openModal(item)}
+                key={item.id}
+            >
+                <Box item xs={3} 
+                 className={`${ checkedProducts.includes(item)
+                ? " products__item--input--highlited"
+                : "products-item"
+            }`} >
+                    <Checkbox 
+                        id="products__item--input"
+                        color="primary" 
+                        checked={checkedProducts.includes(item)}
+                        onChange={() => checkboxChanged(item)}
+                    />
+                    <Paper>
+                        <div className="products-image">
+                            <img src={item.image} alt="img" />
+                        </div>
+                        <div className="products-title">
+                            <h3>{item.title}</h3>
+                        </div>
+                        <h3 className="products-supplier">
+                            <span>By:</span>
+                            <button>US-Supplier103</button>
+                        </h3>
+                        <div className="products-price">
+                            <span>COST {item.price}$ </span>
+                        </div>
+                    </Paper>
+                </Box>
+            </Box>
+    ))}
+    </Grid>
+    )
+            
+}

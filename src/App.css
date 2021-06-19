@@ -387,7 +387,6 @@
   border: 2px solid #61d5df;
   cursor: pointer;
   flex: 1 300px;
-  max-width: calc(100% / 4 - 20px);
   height: 475px;
   background-color: #fff;
   border-radius: 8px;

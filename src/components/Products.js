@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import SingleProduct from "./Single-product";
 import Modal from "./Modal";
-import Testing from "./Testing";
 import { useHistory } from "react-router-dom";
 
 
@@ -15,20 +14,13 @@ const Products = ({
   const history = useHistory();
 
   const onClose = () => {
-    setIsOpen(false);
     history.push(`/catalog/`)
+    setIsOpen(false);
   }
   return (
     <div className="content__products">
       <div id="products-wrapper">
-        {/* <SingleProduct
-          products={products}
-          checkedProducts={checkedProducts}
-          checkboxChanged={checkboxChanged}
-          setActiveProduct={setActiveProduct}
-          setIsOpen={setIsOpen}
-        /> */}
-        <Testing 
+        <SingleProduct 
         products={products}
         checkedProducts={checkedProducts}
         checkboxChanged={checkboxChanged}
