@@ -10,7 +10,7 @@ const Dropdown = ({ category }) => {
 
   const redirectMain = () => {
     toggle(false);
-    history.push("/");
+    history.push("/catalog");
   };
 
   return (

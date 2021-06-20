@@ -1,5 +1,5 @@
 import React from 'react'
-import { Checkbox, Grid, Paper , Box } from '@material-ui/core'
+import { Grid, Paper , Box } from '@material-ui/core'
 import { useHistory } from "react-router-dom";
 
 
@@ -15,8 +15,7 @@ export default function SingleProduct({products, checkedProducts, checkboxChange
     return (
         <Grid container justify="space-between">
              {products.map((item) => (
-            <Box className="product-test"
-                onClick={(e) => openModal(item)}
+            <Box className="product-box"
                 key={item.id}
             >
                 <Box item xs={3} 
@@ -24,13 +23,17 @@ export default function SingleProduct({products, checkedProducts, checkboxChange
                 ? " products__item--input--highlited"
                 : "products-item"
             }`} >
-                    <Checkbox 
-                        id="products__item--input"
-                        color="primary" 
-                        checked={checkedProducts.includes(item)}
-                        onChange={() => checkboxChanged(item)}
+                <div className="checkbox-container">
+                    <input
+                    type="checkbox"
+                    id="products__item--input"
+                    className="products__item--input"
+                    checked={checkedProducts.includes(item)}
+                    onChange={() => checkboxChanged(item)}
                     />
-                    <Paper>
+                </div>
+
+                    <Paper onClick={(e) => openModal(item)}>
                         <div className="products-image">
                             <img src={item.image} alt="img" />
                         </div>

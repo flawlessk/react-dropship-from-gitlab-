@@ -311,7 +311,6 @@
 }
 .products-item {
   flex: 1 300px;
-  /* max-width: calc(100% / 4 - 20px); */
   height: 475px;
   background-color: #fff;
   border: 1px solid #e4e5ec;
@@ -322,7 +321,7 @@
   text-align: justify;
   box-sizing: border-box;
   position: relative;
-  margin: 0 10px 10px;
+  margin: 0 10px 30px ;
 }
 .products-item:hover {
   cursor: pointer;
@@ -620,8 +619,6 @@
   width: 25px;
   cursor: pointer;
 }
-
-
-.product-test{
+.product-box{
   width :  calc(100% / 4 - 20px);
 }
