@@ -335,10 +335,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 50px;
 }
 .products-image img {
   max-width: 100%;
   max-height: 100%;
+}
+.products-info {
+  margin-top: 50px;
 }
 .products-title {
   padding: 10px;
@@ -621,4 +625,17 @@
 }
 .product-box{
   width :  calc(100% / 4 - 20px);
+}
+.Login {
+  margin-left: 100px;
+  padding: 10px;
+}
+.Login div {
+  padding: 10px;
+}
+.products-paper {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
 }

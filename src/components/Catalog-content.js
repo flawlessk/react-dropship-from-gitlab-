@@ -20,7 +20,8 @@ const CatalogContent = ({
   let { categoryParams } = useParams();
   const categoryParam = categoryParams?.replace(/-/g, " ");
   useEffect(() => {
-    if (categoryParam !== params) {
+    const pathName = window.location.pathname;
+    if (categoryParam !== params && pathName.indexOf("details") === -1) {
       setParams(categoryParam);
     }
   });

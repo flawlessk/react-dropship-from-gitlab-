@@ -90,7 +90,7 @@ export default function Modal({ open, onClose, products }) {
             </div>
           </div>
           <img
-            src="../assets/close.png"
+            src="/assets/close.png"
             alt="close"
             aria-label="Close"
             className="content-btn-close"

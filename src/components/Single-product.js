@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Paper , Box } from '@material-ui/core'
+import { Grid, Paper , Box,  } from '@material-ui/core'
 import { useHistory } from "react-router-dom";
 
 
@@ -9,7 +9,7 @@ export default function SingleProduct({products, checkedProducts, checkboxChange
     const openModal = (item) => {
         setActiveProduct(item);
         setIsOpen(true);
-        history.push(`/catalog/${item.id}`)
+        history.push(`/catalog/details/${item.id}`)
       };
 
     return (
@@ -33,17 +33,19 @@ export default function SingleProduct({products, checkedProducts, checkboxChange
                     />
                 </div>
 
-                    <Paper onClick={(e) => openModal(item)}>
+                    <Paper className="products-paper" onClick={(e) => openModal(item)}>
                         <div className="products-image">
                             <img src={item.image} alt="img" />
                         </div>
-                        <div className="products-title">
-                            <h3>{item.title}</h3>
+                        <div className="products-info">
+                            <div className="products-title">
+                                <h3>{item.title}</h3>
+                            </div>
+                            <h3 className="products-supplier">
+                                <span>By:</span>
+                                <button>US-Supplier103</button>
+                            </h3>
                         </div>
-                        <h3 className="products-supplier">
-                            <span>By:</span>
-                            <button>US-Supplier103</button>
-                        </h3>
                         <div className="products-price">
                             <span>COST {item.price}$ </span>
                         </div>
