@@ -639,3 +639,10 @@
   flex-direction: column;
   justify-content: space-between;
 }
+.user-cart {
+  margin-left: 54px;
+}
+.logout {
+  margin-top: 30px;
+  margin-left: 100px;
+}

@@ -1,19 +1,35 @@
-import React, { useState } from "react";
-import axios from "axios";
-import { WEB_URL, WEB_URL_V1 } from "../Config";
+import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router";
+import { login } from "../API";
 
 
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const history = useHistory();
 
 
-    const Login = async (email,password) => {
-        const results = await axios.post(WEB_URL + "/login", {email, password});
+    const performLogIn = (e) => {
+        e.preventDefault();
+        login(email,password)
+        .then( res => {
+            LoggedIn();
+        })
+        .catch(error => {
+            alert("email or password is incorrect!!!")
+        })
+        ;
     }
 
-    const performLogIn = () => {
-        Login(email,password);
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        if(token) {
+            LoggedIn();
+        }
+    },[])
+
+    const LoggedIn = () => {
+        history.push("/cart")
     }
 
     return (
@@ -36,7 +52,7 @@ const Login = () => {
                 />
             </div>
             <div>
-                <input type="button" value="Log In" />
+                <input type="submit" value="Log In" />
             </div>
         </form>
     )

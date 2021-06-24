@@ -2,6 +2,8 @@ import Nav from "./components/Nav";
 import Main from "./components/Main";
 import { Switch, Route } from "react-router-dom";
 import Login from "./components/Login";
+import Cart from "./components/Cart";
+import Logout  from "./components/Logout";
 
 function App() {
   return (
@@ -15,13 +17,14 @@ function App() {
           <Main />
         </Route>
         <Route path="/user/profile">
-          <h2>This is User Profile Section</h2>
+          <h2>this is user profile</h2>
         </Route>
-        <Route exact path="/">
+        <Route exact path="/login">
           <Login />
         </Route>
-        <Route path="/cart">
-          <h2>This is Cart Section</h2>
+        <Route exact path="/cart">
+          <Cart />
+          <Logout />
         </Route>
         <Route path="/dashboard">
           <h2>This is Dashboard Section</h2>

@@ -1,7 +1,3 @@
-const WEB_ADDRES = "https://fakestoreapi.com";
-
-export default WEB_ADDRES;
-
-
-export const WEB_URL = "";
-export const WEB_URL_V1 = WEB_URL + "/api/v1";
+export const WEB_ADDRES = "https://fakestoreapi.com";
+export const WEB_URL = "http://18.185.148.165:3000/";
+export const WEB_URL_V1 = WEB_URL + "api/v1/";
