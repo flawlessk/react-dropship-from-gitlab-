@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Cart from "./components/Cart";
 import Logout  from "./components/Logout";
+import Register from "./components/Register";
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
         <Route exact path="/cart">
           <Cart />
           <Logout />
+        </Route>
+        <Route exact path="/register">
+          <Register />
         </Route>
         <Route path="/dashboard">
           <h2>This is Dashboard Section</h2>

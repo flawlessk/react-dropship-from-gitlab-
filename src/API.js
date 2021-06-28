@@ -9,7 +9,6 @@ export const getProductsCategories = async () =>
 export const getProductsFiltered = async (category) =>
   await call(`/products/category/${category}`);
 
-
 export const login = async (email,password) => {
     try {
         const results = await axios.post(WEB_URL + "login", {email, password});
@@ -18,6 +17,14 @@ export const login = async (email,password) => {
     } catch(error) {
         throw new Error(error);
     }
+}
+
+export const register = async (firstname, lastname, email, password, passwordConfirmation) => {
+  try {
+    const results = await axios.post(WEB_URL + "register", {firstName: firstname, lastName: lastname, email, password, passwordConfirmation});
+  } catch(error) {
+    throw new Error(error);
+  }
 }
 
 export const cart = async () => {
