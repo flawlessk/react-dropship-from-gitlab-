@@ -1,6 +1,11 @@
 import axios from "axios";
 import {WEB_ADDRES, WEB_URL, WEB_URL_V1} from "./Config";
 
+axios.interceptors.request.use((config) => {
+  config.headers.Authorization = `Bearer ${localStorage.getItem("token")}`;
+  return config;
+})
+
 const call = async (url) => await axios.get(WEB_ADDRES + url);
 
 export const getProductsSorted = async () => await call("/products");
@@ -29,15 +34,16 @@ export const register = async (firstname, lastname, email, password, passwordCon
 
 export const cart = async () => {
   try {
-    const results = await axios.get(WEB_URL_V1 + "cart", {
-      headers: {
-          "Authorization": `Bearer ${localStorage.getItem("token")}`
-      }
-    });
+    const results = await axios.get(WEB_URL_V1 + "cart");
   } catch(error) {
     if(error.response.status === 401) {
       localStorage.clear();
       window.location.href = "/";
     }
   }
+}
+
+export const productsAPI = async () => {
+  const results = await axios.get(WEB_URL_V1 + "products");
+  return results.data.data;
 }
