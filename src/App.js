@@ -5,44 +5,58 @@ import Login from "./components/Login";
 import Cart from "./components/Cart";
 import Logout  from "./components/Logout";
 import Register from "./components/Register";
+import MainPage from "./components/Main-page";
 
 function App() {
   return (
     <>
-        <Nav />
       <Switch>
         <Route exact path="/catalog/details/:categoryParams?">
+          <Nav />
           <Main />
         </Route>
         <Route exact path="/catalog/:categoryParams?">
+          <Nav />
           <Main />
         </Route>
         <Route path="/user/profile">
+          <Nav />
           <h2>this is user profile</h2>
         </Route>
+        <Route exact path="/">
+          <MainPage />
+        </Route>
         <Route exact path="/login">
+          <Nav />
           <Login />
         </Route>
         <Route exact path="/cart">
+          <Nav />
           <Cart />
           <Logout />
         </Route>
         <Route exact path="/register">
+          <Nav />
           <Register />
         </Route>
         <Route path="/dashboard">
+          <Nav />
           <h2>This is Dashboard Section</h2>
         </Route>
         <Route path="/inventory">
+          <Nav />
           <h2>This is Inventory Section</h2>
         </Route>
         <Route path="/transactions">
+          <Nav />
          <h2>This is Transactions Section</h2>
         </Route>
         <Route path="/orders">
+          <Nav />
           <h2>This is Orders Section</h2>
         </Route>
         <Route path="/store">
+          <Nav />
           <h2>This is Store Section</h2>
         </Route>
       </ Switch>
