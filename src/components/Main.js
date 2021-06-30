@@ -2,14 +2,14 @@ import CatalogNav from "./Catalog-nav";
 import CatalogContent from "./Catalog-content";
 import { useState, useEffect } from "react";
 import {
-  getProductsCategories,
-  getProductsFiltered,
+  // getProductsCategories,
+  // getProductsFiltered,
   getProductsSorted,
 } from "../API";
 
 
 const Main = () => {
-  const [category, setCategory] = useState([]);
+  // const [category, setCategory] = useState([]);
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("");
   const [params, setParams] = useState();
@@ -30,30 +30,23 @@ const Main = () => {
   };
 
   useEffect(() => {
-    if (params) {
-      getProductsFiltered(params).then((products) => {
-        const dataArray = filterProducts(products.data, search);
-        setProducts(dataArray);
-      });
-    } else {
       getProductsSorted().then((products) => {
-        const dataArray = products.data;
+        const dataArray = products.data.data;
         setProducts(dataArray);
       });
-    }
   }, [params,search]);
 
-  useEffect(() => {
-    getProductsCategories().then((products) => {
-      const categoryArray = products.data;
-      setCategory(categoryArray);
-    });
-  }, []);
+  // useEffect(() => {
+  //   getProductsCategories().then((products) => {
+  //     const categoryArray = products.data;
+  //     setCategory(categoryArray);
+  //   });
+  // }, []);
 
   useEffect(() => {
     const searchTimeout = setTimeout(() => {
       getProductsSorted().then((products) => {
-        const dataArray = products.data;
+        const dataArray = products.data.data;
         let searchProducts = filterProducts(dataArray, search);
         setProducts([...searchProducts]);
       });
@@ -67,11 +60,11 @@ const Main = () => {
     setSearch(event.target.value);
   };
 
-  const filterProducts = (products, text) => {
-    return products.filter((value) =>
-      value.title.toUpperCase().includes(text.toUpperCase())
-    );
-  }
+    const filterProducts = (products, text) => {
+      return products.filter((value) =>
+        value.title.toUpperCase().includes(text.toUpperCase())
+      );
+    }
 
   const getSortedProducts = async (value) => {
     const sortedProducts = [...products];
@@ -92,7 +85,7 @@ const Main = () => {
   return (
     <div className="main">
       <div className="main__catalog">
-        <CatalogNav category={category} />
+        <CatalogNav />
             <CatalogContent
               checkedProducts={checkedProducts}
               checkboxChanged={checkboxChanged}

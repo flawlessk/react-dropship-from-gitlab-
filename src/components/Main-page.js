@@ -19,7 +19,7 @@ const MainPage = () => {
                                     <a href="">ABOUT</a>
                                 </li>
                                 <li>
-                                    <a href="">CATALOG</a>
+                                    <a href="/catalog">CATALOG</a>
                                 </li>
                                 <li>
                                     <a href="">PRICING</a>
@@ -42,14 +42,14 @@ const MainPage = () => {
                             </ul>
                         </div>
                         <div className="share-links">
-                            <a href="https://www.facebook.com/365Dropship" target="_blank">
+                            <a href="https://www.facebook.com/365Dropship" target="_blank" rel="noreferrer">
                                 <img className="fb-img" width="12px" src="../../assets/fb.svg" alt="fblogo" />
                             </a>
                         </div>
                     </div>
                 </div>
             </header>
-            <img className="mainpage-img" width="100%" src="https://mk0q365dropshipe482k.kinstacdn.com/wp-content/uploads/2020/06/hero-1.jpg" alt="back-image" />
+            <img className="mainpage-img" width="100%" src="https://mk0q365dropshipe482k.kinstacdn.com/wp-content/uploads/2020/06/hero-1.jpg" alt="back" />
             <div className="baner-wrapper">
                 <div className="wrapper-content">
                     <img src="https://mk0q365dropshipe482k.kinstacdn.com/wp-content/uploads/2020/06/356Logo.svg" alt="365dp" />

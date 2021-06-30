@@ -35,11 +35,12 @@ export default function SingleProduct({products, checkedProducts, checkboxChange
 
                     <Paper className="products-paper" onClick={(e) => openModal(item)}>
                         <div className="products-image">
-                            <img src={item.image} alt="img" />
+                            <img src={item.imageUrl} alt="img" />
                         </div>
                         <div className="products-info">
                             <div className="products-title">
                                 <h3>{item.title}</h3>
+                                <p>{item.description}</p>
                             </div>
                             <h3 className="products-supplier">
                                 <span>By:</span>

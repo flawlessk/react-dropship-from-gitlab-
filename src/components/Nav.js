@@ -16,7 +16,7 @@ const Nav = () => {
   return (
         <nav className="nav">
           <div className="logo">
-            <a href="/catalog" id="dropship_logo">
+            <a href="/" id="dropship_logo">
               <img
                 className="logo_img"
                 src="/assets/dropship_logo.png"

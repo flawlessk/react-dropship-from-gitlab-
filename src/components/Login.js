@@ -52,7 +52,7 @@ const Login = () => {
                 />
             </div>
             <div>
-                <input type="submit" value="Log In" />
+                <input type="submit" value="Log In" className="sign-up-btn" />
             </div>
         </form>
     )

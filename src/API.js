@@ -6,13 +6,14 @@ axios.interceptors.request.use((config) => {
   return config;
 })
 
-const call = async (url) => await axios.get(WEB_ADDRES + url);
+const call = async (url) => await axios.get(WEB_URL_V1 + url);
 
-export const getProductsSorted = async () => await call("/products");
-export const getProductsCategories = async () =>
-  await call("/products/categories");
-export const getProductsFiltered = async (category) =>
-  await call(`/products/category/${category}`);
+export const getProductsSorted = async () => await call("products");
+
+// export const getProductsCategories = async () =>
+//   await call("/products/categories");
+// export const getProductsFiltered = async (category) =>
+//   await call(`/products/category/${category}`);
 
 export const login = async (email,password) => {
     try {
@@ -41,9 +42,4 @@ export const cart = async () => {
       window.location.href = "/";
     }
   }
-}
-
-export const productsAPI = async () => {
-  const results = await axios.get(WEB_URL_V1 + "products");
-  return results.data.data;
 }

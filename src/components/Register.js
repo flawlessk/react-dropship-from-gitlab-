@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useHistory } from "react-router";
 import { register } from "../API";
 
-
 const Register = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -75,7 +74,7 @@ const Register = () => {
                 required />
             </div>
             <div>
-                <input type="submit" value="Register" />
+                <input type="submit" value="Register" className="sign-up-btn" />
             </div>
         </form>
     )

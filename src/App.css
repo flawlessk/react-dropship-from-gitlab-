@@ -627,7 +627,14 @@
   width :  calc(100% / 4 - 20px);
 }
 .Login {
-  margin-left: 100px;
+  margin: 20px 40px;
+}
+.Login div {
+  padding: 10px;
+}
+.Login div input {
+  border-color: #61D5DF;
+  border-radius: 5px;
   padding: 10px;
 }
 .Login div {
@@ -647,11 +654,22 @@
   margin-left: 100px;
 }
 .Register {
-  margin-top: 30px;
-  margin-left: 100px;
+  margin: 20px 40px;
 }
 .Register div {
   padding: 10px;
+}
+.Register div input {
+  border-color: #61D5DF;
+  border-radius: 5px;
+  padding: 10px;
+}
+.dialog-regist {
+  margin: 20px 90px;
+  padding-top: 20px;
+  font-size: 25px;
+  color: #61D5DF;
+  font-weight: 700;
 }
 .page-wrapper {
   position: relative;
@@ -706,6 +724,7 @@
   margin-top: 10px !important;
   transition: all 0.5s;
   padding-top: 15px;
+  cursor: pointer;
 }
 .sign-up-btn:hover {
   line-height: 24px !important;
@@ -715,7 +734,6 @@
   color: #fff !important;
   margin-top: 10px !important;
   transition: all 0.5s;
-  padding-top: 15px;
   background-color: #61d5df !important;
 }
 .log-in-btn {

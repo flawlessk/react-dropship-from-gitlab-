@@ -1,11 +1,12 @@
 import Nav from "./components/Nav";
 import Main from "./components/Main";
 import { Switch, Route } from "react-router-dom";
-import Login from "./components/Login";
 import Cart from "./components/Cart";
 import Logout  from "./components/Logout";
-import Register from "./components/Register";
 import MainPage from "./components/Main-page";
+import SimpleModal from "./components/Register-modal";
+import LoginModal from "./components/Login-modal";
+
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
         </Route>
         <Route exact path="/login">
           <Nav />
-          <Login />
+          <LoginModal />
         </Route>
         <Route exact path="/cart">
           <Nav />
@@ -37,7 +38,7 @@ function App() {
         </Route>
         <Route exact path="/register">
           <Nav />
-          <Register />
+          <SimpleModal />
         </Route>
         <Route path="/dashboard">
           <Nav />
