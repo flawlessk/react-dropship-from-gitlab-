@@ -29,7 +29,7 @@ const Login = () => {
     },[])
 
     const LoggedIn = () => {
-        history.push("/cart")
+        history.push("/catalog")
     }
 
     return (

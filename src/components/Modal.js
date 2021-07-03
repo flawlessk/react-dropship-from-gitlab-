@@ -40,14 +40,14 @@ export default function Modal({ open, onClose, products }) {
               </div>
               <div className="modal-slideshow">
                 <div className="slideshow-image">
-                  <img src={products.image} alt="prod" />
+                  <img src={products.imageUrl} alt="prod" />
                 </div>
                 <div className="slideshow-pagination">
                   <ul className="pagination-ul">
                     <li className="pagination-li">
                       <img
                         className="pagination-img"
-                        src={products.image}
+                        src={products.imageUrl}
                         alt="produc"
                       />
                     </li>

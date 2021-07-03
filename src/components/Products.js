@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SingleProduct from "./Single-product";
+import CatalogPRoduct from "./Catalog-product";
 import Modal from "./Modal";
 import { useHistory } from "react-router-dom";
 
@@ -20,7 +20,7 @@ const Products = ({
   return (
     <div className="content__products">
       <div id="products-wrapper">
-        <SingleProduct 
+        <CatalogPRoduct 
         products={products}
         checkedProducts={checkedProducts}
         checkboxChanged={checkboxChanged}

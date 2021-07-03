@@ -56,7 +56,7 @@ const MainPage = () => {
                     <h4>WE GOT YOUR SUPPLY CHAIN COVERED</h4>
                     <h4>365 DAYS A YEAR!</h4>
                 </div>
-                <a className="sign-up-click" href="https://app.365dropship.com/user/pages/register/1">SIGN UP NOW</a>
+                <a className="sign-up-click" href="/register">SIGN UP NOW</a>
             </div>
             <section className="main-page-section">
                 <div className="section-heading">

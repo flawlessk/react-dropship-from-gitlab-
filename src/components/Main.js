@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import {
   // getProductsCategories,
   // getProductsFiltered,
-  getProductsSorted,
+  getProducts,
 } from "../API";
 
 
@@ -22,7 +22,7 @@ const Main = () => {
   };
 
   const selectAll = () => {
-    setCheckProducts(products);
+    setCheckProducts(products.map((p) => p.id));
   };
 
   const clearAll = () => {
@@ -30,8 +30,8 @@ const Main = () => {
   };
 
   useEffect(() => {
-      getProductsSorted().then((products) => {
-        const dataArray = products.data.data;
+      getProducts().then((products) => {
+        const dataArray = products;
         setProducts(dataArray);
       });
   }, [params,search]);
@@ -42,11 +42,11 @@ const Main = () => {
   //     setCategory(categoryArray);
   //   });
   // }, []);
-
+  
   useEffect(() => {
     const searchTimeout = setTimeout(() => {
-      getProductsSorted().then((products) => {
-        const dataArray = products.data.data;
+      getProducts().then((products) => {
+        const dataArray = products;
         let searchProducts = filterProducts(dataArray, search);
         setProducts([...searchProducts]);
       });

@@ -626,6 +626,25 @@
 .product-box{
   width :  calc(100% / 4 - 20px);
 }
+.products-paper:hover .hidden-btn {
+  display: block;
+}
+.hidden-btn {
+  display: none;
+  position: absolute;
+  z-index: 1002;
+  top: 15px;
+  right: 20px;
+  background-color: #61d5df;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: 0;
+  padding: 10px;
+  font-size: 12px;
+  border: none;
+  font-weight: 600;
+}
 .Login {
   margin: 20px 40px;
 }
@@ -847,4 +866,21 @@
   vertical-align: middle;
   box-sizing: content-box;
   width: auto;
+}
+.cart-wrapper {
+  margin-left: 54px;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.formikform {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin-left: 200px;
+}
+.formik-header {
+  margin-left: 350px;
+  margin-top: 200px;
+  margin-bottom: 30px;
 }
