@@ -6,25 +6,19 @@ import { Paper , Box } from '@material-ui/core'
 const Cart = () => {
     const [cartData, setCartData] = useState({});
 
-    const items = cartData.cartItem;
-
-    // const filteredCartData = {
-    //     ...cartData,
-    //     item: items.filter()
-    // }
+    
     useEffect(() => {
         cart().then(res => {
             setCartData(res);
         })
     }, [])
-    
-    
+
     return (
         <>
         <button
+            className="remove-item"
             onClick={() => {
                 removeFromCart(cartData.id);
-                setCartData(cartData.filter(cartData.id))
             }}
         >Remove Item</button>
         <div className="cart-wrapper">
