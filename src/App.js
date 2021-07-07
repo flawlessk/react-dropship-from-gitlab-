@@ -13,10 +13,10 @@ function App() {
   return (
     <>
       <Switch>
-        <Route exact path="/catalog/details/:categoryParams?">
+        {/* <Route exact path="/catalog/details/:categoryParams?">
           <Nav />
           <Main />
-        </Route>
+        </Route> */}
         <Route exact path="/catalog/:categoryParams?">
           <Nav />
           <Main />
@@ -48,10 +48,6 @@ function App() {
         <Route path="/dashboard">
           <Nav />
           <h2>This is Dashboard Section</h2>
-        </Route>
-        <Route path="/inventory">
-          <Nav />
-          <h2>This is Inventory Section</h2>
         </Route>
         <Route path="/transactions">
           <Nav />

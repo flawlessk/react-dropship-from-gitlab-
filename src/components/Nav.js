@@ -52,16 +52,9 @@ const Nav = () => {
                 </li>
               </div>
               <div className="list_box">
-                <li className="list-item" id="list-item--cube">
-                  <Link to="/inventory">
-                    <FontAwesomeIcon className="icons" icon={faCube} />
-                  </Link>
-                </li>
-              </div>
-              <div className="list_box">
                 <li className="list-item" id="list-item--inventory">
                   <Link to="/cart">
-                    <FontAwesomeIcon className="icons" icon={faShoppingCart} />
+                  <FontAwesomeIcon className="icons" icon={faCube} />
                   </Link>
                 </li>
               </div>
